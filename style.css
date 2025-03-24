@@ -23,6 +23,30 @@
     background-image: linear-gradient(135deg, rgba(126, 87, 194, 0.08) 0%, rgba(94, 53, 177, 0.03) 100%);
   }
   
+  /* Navigation styling */
+  .navbar {
+    padding: 1rem 0;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+  
+  .navbar-brand {
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 1.5rem;
+  }
+  
+  .nav-link {
+    font-weight: 500;
+    color: var(--text);
+    margin-left: 1rem;
+    transition: color 0.3s;
+  }
+  
+  .nav-link:hover, .nav-link.active {
+    color: var(--primary);
+  }
+  
   /* Header styling */
   header {
     background-color: white;
@@ -33,6 +57,11 @@
   header h1 {
     color: var(--primary);
     font-weight: 600;
+  }
+  
+  .border-bottom {
+    border-bottom: 1px solid var(--border) !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   }
   
   /* Card styling */
@@ -74,6 +103,17 @@
   .btn-primary:active {
     transform: translateY(0);
     box-shadow: 0 2px 8px rgba(94, 53, 177, 0.3);
+  }
+  
+  .btn-outline-primary {
+    color: var(--primary);
+    border-color: var(--primary);
+  }
+  
+  .btn-outline-primary:hover {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
   }
   
   /* Form controls */

@@ -246,25 +246,50 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
     
-    // Check job match
+    // Check job match - Fixed to handle compound terms
     function checkJobMatch(resumeText, jobText) {
       if (!jobText) return { matches: [], score: 0 };
       
+      const resumeLower = resumeText.toLowerCase();
       const commonWords = ['and', 'the', 'for', 'with', 'that', 'have', 'this', 'are', 'from', 
         'your', 'will', 'you', 'our', 'who', 'should', 'must', 'can', 'able', 'they', 'them'];
       
-      const jobWords = [...new Set(jobText.toLowerCase()
+      // First look for comma-separated or line-separated terms
+      const explicitTerms = jobText.split(/,|\n/)
+        .map(term => term.trim())
+        .filter(term => term.length > 0);
+      
+      // Also extract potential multi-word terms
+      const multiWordTerms = jobText.toLowerCase().match(/\b[a-z]+\s+[a-z]+\b/g) || [];
+      
+      // Then extract individual words (but only if not part of a multi-word term)
+      const allText = jobText.toLowerCase();
+      const jobWords = [...new Set(allText
         .split(/[,.\s()\[\]]+/)
         .filter(word => word.length > 3 && !commonWords.includes(word)))];
       
-      const resumeLower = resumeText.toLowerCase();
-      const matches = jobWords.map(word => ({
-        keyword: word,
-        exists: resumeLower.includes(word)
+      // Combine all possible terms, prioritizing explicit and multi-word terms
+      const allTerms = [...explicitTerms, ...multiWordTerms];
+      
+      // Add individual words only if they're not part of multi-word terms
+      for (const word of jobWords) {
+        // Check if this word is already part of a multi-word term
+        if (!multiWordTerms.some(term => term.includes(word))) {
+          allTerms.push(word);
+        }
+      }
+      
+      // Remove duplicates and ensure all items are unique
+      const uniqueTerms = [...new Set(allTerms)];
+      
+      // Check if each term exists in the resume
+      const matches = uniqueTerms.map(term => ({
+        keyword: term.trim(),
+        exists: resumeLower.includes(term.toLowerCase())
       }));
       
       const matchCount = matches.filter(m => m.exists).length;
-      const score = jobWords.length ? (matchCount / jobWords.length) * 100 : 0;
+      const score = uniqueTerms.length ? (matchCount / uniqueTerms.length) * 100 : 0;
       
       return { matches, score };
     }
