@@ -4,17 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ResuMatch - AI Resume Analyzer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="landing.css">
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light">
+  <nav class="navbar navbar-expand-lg">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <h5><img src="logo.png" alt="ResuMatch" height="40" class="me-2">ResuMatch</h5>
+        <img src="logo.png" alt="ResuMatch" height="40" class="me-2">ResuMatch
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
@@ -22,186 +21,90 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#features">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#how-it-works">How It Works</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Try Now</a>
+            <a class="nav-link try-now-btn" href="index.html">Try Now</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="hero">
+  <header class="hero">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6">
-          <h1 class="mb-3">Looking for a way to know if your <span>Resume</span> is a Good fit for the Job?</h1>
-          <p class="mb-4">
-            Check how good your resume is for the job you are applying for, with our <strong>ResuMatch</strong> project. It gives you a score and explains how to improve your resume, to help increase chances of your resume getting shortlisted for the job.
-          </p>
-          <div class="hero-buttons">
-            <a href="index.html" class="btn btn-primary">Analyze Your Resume</a>
-          </div>
+          <h1>Get Your Resume <span>Job-Ready</span></h1>
+          <p>AI-powered resume analyzer to match your resume with job descriptions and improve your chances of getting hired.</p>
+          <a href="index.html" class="btn btn-primary btn-lg">Try Now - It's Free</a>
         </div>
         <div class="col-lg-6">
-          <img src="image.png" alt="ResuMatch" class="hero-image">
+          <img src="image.png" alt="ResuMatch App" class="img-fluid hero-image">
         </div>
       </div>
     </div>
-  </section>
+  </header>
 
-  <!-- Features Introduction -->
-  <section class="features-intro">
-    <div class="container text-center">
-      <h2>Features</h2>
-      <p class="lead">
-        Upload your Resume and Give Job Description and get the result on what are your chances of getting shortlisted for the given job description.
-      </p>
-    </div>
-  </section>
-
-  <!-- Features Section -->
-  <section id="features" class="features">
+  <section class="features">
     <div class="container">
+      <h2 class="text-center mb-5">How It Works</h2>
       <div class="row">
-        <div class="col-md-6 mb-4">
+        <div class="col-lg-3">
           <div class="feature-card">
-            <div class="feature-icon">
-              <div class="score-circle">
-                <span>80%</span>
-              </div>
+            <div class="icon-circle">
+              <i class="fas fa-upload"></i>
             </div>
-            <h3>Resume Shortlisting Score</h3>
-            <p>
-              Get a percentage score that reflects how well your resume matches the job description. The higher the score, the better your chances of getting shortlisted.
-            </p>
+            <h3>Upload Resume</h3>
+            <p>Upload your resume or paste its text content</p>
           </div>
         </div>
-        <div class="col-md-6 mb-4">
+        <div class="col-lg-3">
           <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-search-plus"></i>
+            <div class="icon-circle">
+              <i class="fas fa-file-alt"></i>
             </div>
-            <h3>Resume Analysis</h3>
-            <p>
-              Receive a summary report that analyzes your resume based on various criteria, such as skills, keywords, and experience. See what you are doing right and what you need to improve.
-            </p>
-          </div>
-        </div>
-        <div class="col-md-6 mb-4">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-chart-line"></i>
-            </div>
-            <h3>Resume Optimization</h3>
-            <p>
-              Get personalized feedback and suggestions on how to improve your resume for the specific job. Learn how to highlight your strengths, address your weaknesses, and tailor your resume for each position.
-            </p>
-          </div>
-        </div>
-        <div class="col-md-6 mb-4">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-robot"></i>
-            </div>
-            <h3>Generative AI</h3>
-            <p>
-              Using generative AI technology based on large language models (LLMs) to compare your resume with the job description, and get better results.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- How It Works -->
-  <section id="how-it-works" class="how-it-works">
-    <div class="container text-center">
-      <h2>How It Works</h2>
-      <div class="row justify-content-center mt-5">
-        <div class="col-md-3">
-          <div class="step-card">
-            <div class="step-number">1</div>
-            <h4>Upload Resume</h4>
-            <p>Upload your resume in PDF or TXT format, or simply paste your resume text</p>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="step-card">
-            <div class="step-number">2</div>
-            <h4>Add Job Description</h4>
+            <h3>Add Job Description</h3>
             <p>Paste the job description you're applying for</p>
           </div>
         </div>
-        <div class="col-md-3">
-          <div class="step-card">
-            <div class="step-number">3</div>
-            <h4>Get Analysis</h4>
-            <p>Receive detailed analysis of your resume against the job requirements</p>
+        <div class="col-lg-3">
+          <div class="feature-card">
+            <div class="icon-circle">
+              <i class="fas fa-robot"></i>
+            </div>
+            <h3>Language API Tool</h3>
+            <p>Our AI analyzes your resume and corrects grammar issues</p>
           </div>
         </div>
-        <div class="col-md-3">
-          <div class="step-card">
-            <div class="step-number">4</div>
-            <h4>Improve & Apply</h4>
-            <p>Make suggested improvements and increase your chances of getting shortlisted</p>
+        <div class="col-lg-3">
+          <div class="feature-card">
+            <div class="icon-circle">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Get Instant Results</h3>
+            <p>See how well your resume matches the job and get improvement tips</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
   <section class="cta">
     <div class="container text-center">
-      <h2>Ready to Optimize Your Resume?</h2>
-      <p class="lead">Start improving your job application success rate today</p>
-      <a href="index.html" class="btn btn-primary btn-lg mt-3">Try ResuMatch Now</a>
+      <h2>Ready to Get Your Dream Job?</h2>
+      <p>Improve your resume and increase your chances of getting hired.</p>
+      <a href="index.html" class="btn btn-primary btn-lg">Try ResuMatch Now</a>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="row">
-        <div class="col-md-4">
+      <div class="footer-content">
+        <div class="footer-left">
           <h5><img src="logo.png" alt="ResuMatch" height="30" class="me-2">ResuMatch</h5>
-          <p>Your tool for resume optimization and job application success.</p>
+          <p>&copy; 2025 ResuMatch. All rights reserved.</p>
         </div>
-        <div class="col-md-4">
-          <h5>Quick Links</h5>
-          <ul class="list-unstyled">
-            <li><a href="#">Home</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#how-it-works">How It Works</a></li>
-            <li><a href="index.html">Try Now</a></li>
-          </ul>
+        <div class="footer-right">
+          <a href="mailto:pratyakshashastri123@gmail.com" class="contact-link">Contact Us</a>
         </div>
-        <div class="col-md-4">
-          <h5>Contact Us</h5>
-          <ul class="list-unstyled">
-            <li><i class="fas fa-envelope me-2"></i> pratyakshashastri123@gmail.com</li>
-            <li><i class="fas fa-phone me-2"></i> +91 9838743731</li>
-          </ul>
-          <div class="social-icons mt-3">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-      </div>
-      <hr>
-      <div class="text-center">
-        <p>&copy; 2025 ResuMatch. All rights reserved.</p>
       </div>
     </div>
   </footer>

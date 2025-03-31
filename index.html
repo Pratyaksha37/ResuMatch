@@ -3,50 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ResuMatch - AI Resume Analyzer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>ResuMatch</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <!-- PDF.js for PDF text extraction -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
   <script>
-    // Initialize PDF.js worker
-    window['pdfjs-dist/build/pdf'] = window.pdfjsLib;
-    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
+    window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
   </script>
 </head>
 <body>
   <div class="container-fluid d-flex flex-column min-vh-100 p-0">
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg">
       <div class="container">
         <a class="navbar-brand" href="landing.html">
          <h5><img src="logo.png" alt="ResuMatch" height="40" class="me-2">ResuMatch</h5> 
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="landing.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="landing.html#features">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="landing.html#how-it-works">How It Works</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="index.html">Try Now</a>
+              <a class="nav-link active try-now-btn" href="index.html">Try Now</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- Full-width border under navbar -->
     <div class="border-bottom w-100"></div>
 
     <main class="container my-4 flex-grow-1">      
@@ -63,7 +46,7 @@
               </div>
               <div class="mb-3">
                 <label for="resume" class="form-label">Or Paste Resume Text</label>
-                <textarea class="form-control" id="resume" rows="10" placeholder="Paste your resume text here..."></textarea>
+                <textarea class="form-control resume-textarea" id="resume" rows="10"></textarea>
               </div>
             </div>
           </div>
@@ -77,7 +60,7 @@
             <div class="card-body">
               <div class="mb-3">
                 <label for="job" class="form-label">Paste Job Description</label>
-                <textarea class="form-control" id="job" rows="10" placeholder="Paste the job description here..."></textarea>
+                <textarea class="form-control job-textarea" id="job" rows="10"></textarea>
               </div>
             </div>
           </div>
@@ -93,10 +76,10 @@
       </div>
 
       <div id="loading" class="d-none text-center my-5">
-        <div class="spinner-border text-primary" role="status">
-          <span class="visually-hidden">Loading...</span>
+        <div class="loading-animation">
+          <div class="loading-bar"></div>
+          <div class="loading-text">Analyzing<span class="dots">...</span></div>
         </div>
-        <p class="mt-3">Analyzing your resume...</p>
       </div>
 
       <div id="results" class="d-none">
@@ -140,17 +123,23 @@
         
         <div class="row">
           <div class="col-12">
-            <div class="card mb-4 shadow-sm" id="verdict">
-              <!-- Will be filled dynamically -->
-            </div>
+            <div class="card mb-4 shadow-sm" id="verdict"></div>
           </div>
         </div>
       </div>
     </main>
 
-    <footer class="py-3 mt-auto border-top">
-      <div class="container text-center">
-        <p class="mb-0">ResuMatch &copy; 2025. All rights reserved.</p>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-left">
+            <h5><img src="logo.png" alt="ResuMatch" height="30" class="me-2">ResuMatch</h5>
+            <p>&copy; 2025 ResuMatch. All rights reserved.</p>
+          </div>
+          <div class="footer-right">
+            <a href="mailto:pratyakshashastri123@gmail.com" class="contact-link">Contact Us</a>
+          </div>
+        </div>
       </div>
     </footer>
   </div>
